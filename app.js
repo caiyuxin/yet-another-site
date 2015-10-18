@@ -23,8 +23,18 @@ app.use(cookieParser());
 app.use(require('less-middleware')(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
 
+
+// Static path
+var bower_static = function (subdir) {
+  return express.static(path.join(__dirname, 'bower_components', subdir))
+};
+
+app.use('/_fw/semantic',     bower_static('semantic/dist'));
+app.use('/_fw/jquery',       bower_static('jquery/dist'));
+app.use('/_fw/font-awesome', bower_static('font-awesome'));
+app.use('/_fw/angular',      bower_static('angular'));
+
 app.use('/', routes);
-app.use('/users', users);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
