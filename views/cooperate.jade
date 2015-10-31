@@ -1,0 +1,20 @@
+include sidebar.jade
+
+extends layout
+
+mixin logo(name)
+  .col-md-4
+    img.logo(src= "images/logo/" + name)
+
+block content
+  .col-md-1
+  .col-md-10
+    .bes.about
+      //img.left-top(src= "images/nao.png")
+      h1.text-center 大数据技术与嵌入式系统实验室
+      h1.text-center 合作单位
+      .row.bes.coop
+        +logo("3.jpg")
+        +logo("631.jpg")
+        +logo("ti.jpg")
+        +logo("xilinx.jpg")

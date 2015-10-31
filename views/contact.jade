@@ -1,0 +1,24 @@
+include sidebar.jade
+
+extends layout
+
+block content
+  .col-md-1
+  .col-md-10
+    .bes.about
+      //img.left-top(src= "images/nao.png")
+      h1 联系地址
+      ul
+        li 陕西省西安市太白南路2号，西安电子科技大学北校区西大楼III区511室，517室。
+        li 陕西省西安市太白南路2号，西安电子科技大学北校区主楼I区150室、151室。
+        li 陕西省西安市西沣路266号，西安电子科技大学南校区G楼520室，524室。
+    ul.nav.nav-tabs
+      li.active(role='presentation')
+        a(href='#') Home
+      li(role='presentation')
+        a(href='#') Profile
+      li(role='presentation')
+        a(href='#') Messages
+      iframe.bes.contact.map(frameborder='0', scrolling='no', marginheight='0', marginwidth='0', src='http://yuntu.amap.com/share/B3IRfm')
+      iframe.bes.contact.map(frameborder='0', scrolling='no', marginheight='0', marginwidth='0', src='http://yuntu.amap.com/share/ZbEfAf')
+
