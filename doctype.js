@@ -1,7 +1,6 @@
-var Type = {
+module.exports = {
   markdown: "Markdown",
-  html: "HTML",
-  jade: "Jade"
+  html:     "HTML",
+  jade:     "Jade",
+  rst:      "reST"
 };
-
-module.exports = Type;
