@@ -1,0 +1,53 @@
+mixin nav(items, active)
+  if active == undefined
+    - var home_class = ""
+  else
+    - var home_class = "bes home nav active"
+  nav.navbar.navbar-inverse.navbar-fixed-top(role="navigation")
+    .container
+      // Brand and toggle get grouped for better mobile display
+      .navbar-header
+        button.navbar-toggle(type="button", data-toggle="collapse", data-target="#bs-example-navbar-collapse-1")
+          span.sr-only Toggle navigation
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+        a.navbar-brand(href="/", class= home_class)
+          i.fa.fa-rocket
+          span  BES
+          span.light  Lab
+      #bs-example-navbar-collapse-1.collapse.navbar-collapse
+        ul.nav.navbar-nav
+          each item in items
+            li
+              if active && item[0] == active
+                a.bes.home.nav.active(href= item[1])= item[0]
+              else
+                a(href= item[1])= item[0]
+
+doctype html
+html(lang="zh_cn")
+  head
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    meta(name="description", content="")
+    meta(name="author", content="")
+    title= title + " - 大数据技术与嵌入式系统实验室"
+    link(href="/_fw/bootstrap/css/bootstrap.min.css", rel="stylesheet")
+    link(href="/_fw/font-awesome/css/font-awesome.min.css", rel="stylesheet")
+    link(href="/stylesheets/blog-home.css", rel="stylesheet")
+  body
+    // Navigation
+    +nav(nav_items, nav_active)
+    // Page Content
+    block content
+    // Footer
+    footer
+      .row
+        .col-lg-12
+          p Copyright &#169; #[i.fa.fa-rocket] BESLab 2015
+    // jQuery
+    script(src="/_fw/jquery/jquery.js")
+    // Bootstrap Core JavaScript
+    script(src="/_fw/bootstrap/js/bootstrap.min.js")

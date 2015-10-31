@@ -1,0 +1,99 @@
+mixin nav-item(literal, url)
+  li
+    a.page-scroll(href=url)= literal
+
+mixin acheve-block(title, name, image, href)
+  div.col-lg-4.col-sm-6
+    a.portfolio-box(href= href)
+      img.img-responsive(src= image)
+      div.portfolio-box-caption
+        div.portfolio-box-caption-content
+          div.project-category.text-faded= title
+          div.project-name= name
+
+mixin about-icons(fa, title, description)
+  div.col-lg-3.col-md-6.col-sm-6.text-center
+    div
+      i.fa.fa-5x(class="fa-" + fa)
+      h3= title
+      p= description
+
+mixin lab-fullname
+  h5.bes.index.fullname #[strong B]ig data technology & #[strong E]mbedded #[strong s]ystem Laboratory
+
+
+doctype html
+html(lang="zh_cn")
+  head
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    title= title
+    link(rel="stylesheet" href="/_fw/bootstrap/css/bootstrap.css")
+    link(rel="stylesheet" href="/_fw/font-awesome/css/font-awesome.css")
+    link(rel="stylesheet" href="stylesheets/grayscale.css")
+    link(rel="stylesheet" href="stylesheets/index.css")
+    link(rel="stylesheet" href="stylesheets/creative.css")
+  body#page-top(data-spy="scroll" data-target=".navbar-fixed-top")
+    nav.navbar.navbar-custom.navbar-fixed-top(role="navigation")
+      div.container
+        div.navbar-header
+          button.navbar-toggle(type="button" data-toggle="collapse" data-target=".navbar-main-collapse")
+            i.fa.fa-bars
+          a.navbar-brand.page-scroll(href="#page-top")
+            i.fa.fa-rocket
+            span  BES
+            span.light  Lab
+        div.collapse.navbar-collapse.navbar-right.navbar-main-collaps
+          ul.nav.navbar-nav
+            li.hidden
+              a(href="#page-top")
+            +nav-item("科研成果", "#achevement")
+            +nav-item("合作交流", "#cooperate")
+            +nav-item("人才培养", "#team")
+            +nav-item("新闻动态", "#news")
+            +nav-item("关于BES", "#about")
+            +nav-item("联系我们", "#contact")
+    header.intro
+      div.intro-body
+        div.container
+          div.row
+            div.col-md-8.col-md-offset-2
+              h1.brand-heading 大数据技术与嵌入式系统实验室
+              +lab-fullname
+              a.btn.btn-circle.page-scroll(href="#about")
+                i.fa.fa-angle-double-down.animated
+    section#achevement.container.content-section.text-center
+      div.row
+        div.col-lg-8.col-lg-offset-2
+          h1 科研成果
+          p 此处亟需文案
+      div.container-fluid
+        div.row.no-gutter
+          +acheve-block("BLA", "BLA", "/images/header-nao.jpg", "#")
+          +acheve-block("BLA", "BLA", "/images/header-nao.jpg", "#")
+          +acheve-block("BLA", "BLA", "/images/header-nao.jpg", "#")
+
+    section#cooperate.container.content-section.text-center
+    section#team.container.content-section.text-center
+    section#news.container.content-section.text-center
+    section#about.container.content-section.text-center
+      div.row
+        div.col-lg-8.col-lg-offset-2
+          h1 关于我们
+          p 此处亟需文案
+      div.row
+        +about-icons("cubes",          "", "BLA")
+        +about-icons("bolt",           "高效", "BLA")
+        +about-icons("gears",          "高效", "BLA")
+        +about-icons("graduation-cap", "成就未来", "BLA")
+    section#contact.container.content-section
+
+
+
+    script(src="/_fw/jquery/jquery.js")
+    script(src="/_fw/bootstrap/js/bootstrap.js")
+    script(src="/_fw/jquery-easing/jquery.easing.js")
+    script(src="/javascripts/grayscale.js")
+    script(src="/javascripts/creative.js")
+

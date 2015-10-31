@@ -6,7 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
-var users = require('./routes/users');
+var home = require('./routes/home');
 
 var app = express();
 
@@ -15,7 +15,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
 // uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+app.use(favicon(path.join(__dirname, 'public/images', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -29,12 +29,15 @@ var bower_static = function (subdir) {
   return express.static(path.join(__dirname, 'bower_components', subdir))
 };
 
-app.use('/_fw/semantic',     bower_static('semantic/dist'));
-app.use('/_fw/jquery',       bower_static('jquery/dist'));
-app.use('/_fw/font-awesome', bower_static('font-awesome'));
-app.use('/_fw/angular',      bower_static('angular'));
+app.use('/_fw/jquery',        bower_static('jquery/dist'));
+app.use('/_fw/jquery-easing', bower_static('jquery-easing'));
+app.use('/_fw/semantic',      bower_static('semantic/dist'));
+app.use('/_fw/font-awesome',  bower_static('font-awesome'));
+app.use('/_fw/angular',       bower_static('angular'));
+app.use('/_fw/bootstrap',     bower_static('bootstrap/dist'));
 
-app.use('/', routes);
+app.use('/i', routes);
+app.use('/',  home);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
