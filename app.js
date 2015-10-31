@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
 var home = require('./routes/home');
+var dev = require('./routes/dev');
 
 var app = express();
 
@@ -38,6 +39,7 @@ app.use('/_fw/bootstrap',     bower_static('bootstrap/dist'));
 app.use('/_fw/underscore',    bower_static('underscore'));
 
 app.use('/i', routes);
+app.use('/dev', dev(__dirname));
 app.use('/',  home);
 
 // catch 404 and forward to error handler
