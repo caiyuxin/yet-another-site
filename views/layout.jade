@@ -13,6 +13,7 @@ html(lang="zh_cn")
     title= title + " - 大数据技术与嵌入式系统实验室"
     link(href="/_fw/bootstrap/css/bootstrap.min.css", rel="stylesheet")
     link(href="/_fw/font-awesome/css/font-awesome.min.css", rel="stylesheet")
+    link(href="/_fw/angular/angular-csp.css", rel="stylesheet")
     link(href="/stylesheets/blog-home.css", rel="stylesheet")
     link(href="/stylesheets/site.css", rel="stylesheet")
   body
@@ -20,7 +21,7 @@ html(lang="zh_cn")
     nav.navbar.navbar-inverse.navbar-fixed-top(role="navigation")
       .container
         .navbar-header
-          button.navbar-toggle(type="button", data-toggle="collapse", data-target="#bs-example-navbar-collapse-1")
+          button.navbar-toggle(type="button", data-toggle="collapse", data-target="#bes-nav")
             span.sr-only Toggle navigation
             span.icon-bar
             span.icon-bar
@@ -29,7 +30,7 @@ html(lang="zh_cn")
             i.fa.fa-rocket
             span  BES
             span.light  Lab
-        .collapse.navbar-collapse
+        #bes-nav.collapse.navbar-collapse
           ul.nav.navbar-nav
             +nav-item("实验室概况", "/about")
             +nav-item("科研成果",   "/achievement")
@@ -52,5 +53,7 @@ html(lang="zh_cn")
           p Copyright &#169; #[i.fa.fa-rocket] BESLab 2015
     script(src="/_fw/jquery/jquery.js")
     script(src="/_fw/underscore/underscore.js")
+    script(src="/_fw/angular/angular.min.js")
     script(src="/_fw/bootstrap/js/bootstrap.min.js")
     script(src="/javascripts/site.js")
+    block extra-script

@@ -83,10 +83,4 @@ router.get('/contact', function(req, res, next) {
   });
 });
 
-router.get('/dev', function(req, res, next) {
-  res.render('dev', {
-    title: '开发日志'
-  });
-});
-
 module.exports = router;
