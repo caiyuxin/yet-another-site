@@ -1,0 +1,20 @@
+include sidebar.jade
+
+
+extends layout
+
+block content
+  .container
+    .row
+      .col-md-8
+        h1
+          a(href="#")= doc.title
+        p= "by " + doc.author
+        p
+          span.glyphicon.glyphicon-time
+          span= doc.timestamp.toLocaleDateString('zh-CN')
+        hr
+        div!= doc.rendered
+        hr
+      .col-md-4
+        +sidebar(categories)

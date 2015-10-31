@@ -1,9 +1,11 @@
 var express = require('express');
 var mongoose = require('mongoose');
+var mongodb = require('mongodb');
 var model = require('../model.js');
 var doc_render = require('../doc.js');
 var Tags = require('../tags.js');
 var _ = require('underscore');
+var ObjectID = mongodb.ObjectId;
 
 var router = express.Router();
 
@@ -29,7 +31,6 @@ router.get('/about', function(req, res, next) {
 
 router.get('/achievement', function(req, res, next) {
   model.Achievement.find(function (err, acs) {
-    console.log(acs);
     acs.forEach(function (ac) {
       ac.rendered = doc_render(ac.doc_type, ac.doc);
     });
@@ -37,6 +38,7 @@ router.get('/achievement', function(req, res, next) {
       title: '科研成果',
       docs: acs,
       show_search: true,
+      base_url: '/achievement/',
       categories: _.values(Tags.Achievement)
     });
   });
@@ -58,7 +60,6 @@ router.get('/team', function(req, res, next) {
 
 router.get('/news', function(req, res, next) {
   model.News.find(function (err, news_iter) {
-    console.log(news_iter);
     news_iter.forEach(function (news) {
       news.rendered = doc_render(news.doc_type, news.doc);
     });
@@ -66,6 +67,7 @@ router.get('/news', function(req, res, next) {
       title: '新闻动态',
       docs: news_iter,
       show_search: true,
+      base_url: '/news/',
       categories: _.values(Tags.News)
     });
   });
@@ -82,5 +84,25 @@ router.get('/contact', function(req, res, next) {
     title: '联系我们'
   });
 });
+
+function details(ptn, cls) {
+  router.get(ptn, function(req, res, next) {
+    var id = req.params[0];
+    cls.findOne({_id: new ObjectID(id)}, function (err, doc) {
+      if (err || !doc) {
+        next(err);
+      }
+      doc.rendered = doc_render(doc.doc_type, doc.doc);
+      console.log(doc);
+      res.render('doc', {
+        title: doc,
+        doc: doc
+      });
+    });
+  });
+}
+
+details('/news/*', model.News);
+details('/achievement/*', model.Achievement);
 
 module.exports = router;

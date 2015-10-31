@@ -1,5 +1,6 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
+var OID = Schema.Types.ObjectId;
 
 var BaseDocument = new Schema ({
   title: String,
@@ -7,9 +8,9 @@ var BaseDocument = new Schema ({
   cover_img: {type: String, default: "images/placeholder.png"},
   doc_type: {type: String, default: "Markdown"},
   doc: String,
-  timestamp: {type: Date, default: Date.now}
+  summary: String,
+  timestamp: {type: Date, default: Date.now},
 });
-
 
 var model = {
   Achievement: mongoose.model('Achievement', BaseDocument),
