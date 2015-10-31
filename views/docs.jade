@@ -1,0 +1,37 @@
+include sidebar.jade
+
+mixin doc-list(docs)
+  each doc in docs
+    h2
+      a(href="#")= doc.title
+    p
+      | by
+      a(href="index.php")= doc.author
+    p
+      span.glyphicon.glyphicon-time
+      span= doc.timestamp.toLocaleDateString('zh-CN')
+    hr
+    img.img-responsive(src= doc.cover_img, alt= "cover of " + doc.title)
+    hr
+    div!= doc.rendered
+    a.btn.btn-primary(href="#")
+      | Read More
+      span.glyphicon.glyphicon-chevron-right
+    hr
+
+extends layout
+
+block content
+  .container
+    .row
+      // Blog Entries Column
+      .col-md-8
+        +doc-list(docs)
+        if docs.length > 10
+          ul.pager
+            li.previous
+              a(href="#") &#8592; Older
+            li.next
+              a(href="#") Newer &#8594;
+      .col-md-4
+        +sidebar(categories)

@@ -35,6 +35,7 @@ app.use('/_fw/semantic',      bower_static('semantic/dist'));
 app.use('/_fw/font-awesome',  bower_static('font-awesome'));
 app.use('/_fw/angular',       bower_static('angular'));
 app.use('/_fw/bootstrap',     bower_static('bootstrap/dist'));
+app.use('/_fw/underscore',    bower_static('underscore'));
 
 app.use('/i', routes);
 app.use('/',  home);

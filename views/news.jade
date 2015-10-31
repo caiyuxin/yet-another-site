@@ -1,6 +1,6 @@
 include sidebar.jade
 
-mixin news-list(acs)
+mixin doc-list(acs)
   each ac in acs
     h2
       a(href="#")= ac.title
@@ -26,7 +26,7 @@ block content
     .row
       // Blog Entries Column
       .col-md-8
-        +news-list(news_iter)
+        +news-list(news_set)
         // Pager
         ul.pager
           li.previous
@@ -35,5 +35,4 @@ block content
             a(href="#") Newer &#8594;
       // Blog Sidebar Widgets Column
       .col-md-4
-        +sidebar
-    hr
+        +sidebar(categories)
