@@ -1,9 +1,10 @@
 mixin sidebar(categories)
     if categories
-      .well
-        h4 分类浏览
-        .row
-          ul.list-group
-            each category in categories
-              li.list-group-item
-                a(href="#" onclick="set_category(\"#{category}\")")= category
+      .bes.sidebar
+        .well
+          h4 分类浏览
+          .row
+            ul.list-group
+              each category in categories
+                li.list-group-item
+                  a(href="#" onclick="set_category(\"#{category}\")")= category
