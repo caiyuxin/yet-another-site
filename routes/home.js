@@ -38,7 +38,7 @@ router.get('/achievement', function(req, res, next) {
       title: '科研成果',
       docs: acs,
       show_search: true,
-      base_url: '/achievement/',
+      base_url: '/achievement_detail/',
       categories: _.values(Tags.Achievement)
     });
   });
@@ -67,7 +67,7 @@ router.get('/news', function(req, res, next) {
       title: '新闻动态',
       docs: news_iter,
       show_search: true,
-      base_url: '/news/',
+      base_url: '/news_detail/',
       categories: _.values(Tags.News)
     });
   });
@@ -93,7 +93,6 @@ function details(ptn, cls) {
         next(err);
       }
       doc.rendered = doc_render(doc.doc_type, doc.doc);
-      console.log(doc);
       res.render('doc', {
         title: doc,
         doc: doc
@@ -102,7 +101,7 @@ function details(ptn, cls) {
   });
 }
 
-details('/news/*', model.News);
-details('/achievement/*', model.Achievement);
+details('/news_detail/*', model.News);
+details('/achievement_detail/*', model.Achievement);
 
 module.exports = router;
