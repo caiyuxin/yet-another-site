@@ -1,0 +1,19 @@
+.bes.member-block > img {
+  max-width: inherit; }
+
+.bes.nav .active {
+  color: white; }
+
+.bes.about {
+  font-family: "Helvetica Neue Light", "Lucida Grande", "Calibri", "Arial", sans-serif;
+  font-size: 17.5px; }
+  .bes.about > img {
+    max-width: 40%;
+    display: block; }
+  .bes.about .left-top {
+    float: left; }
+  .bes.about .right-bottom {
+    float: right; }
+
+.bes.coop .logo {
+  width: 100%; }

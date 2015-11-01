@@ -1,0 +1,18 @@
+<!DOCTYPE html><html lang="zh_cn"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content=""><meta name="author" content=""><title>开发日志 - 大数据技术与嵌入式系统实验室</title><link href="_fw/bootstrap/css/bootstrap.min.css" rel="stylesheet"><link href="_fw/font-awesome/css/font-awesome.min.css" rel="stylesheet"><link href="_fw/angular/angular-csp.css" rel="stylesheet"><link href="stylesheets/blog-home.css" rel="stylesheet"><link href="stylesheets/site.css" rel="stylesheet"></head><body><!-- Navigation--><nav role="navigation" class="navbar navbar-inverse navbar-fixed-top"><div class="container"><div class="navbar-header"><button type="button" data-toggle="collapse" data-target="#bes-nav" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="index.html" class="navbar-brand"><i class="fa fa-rocket"></i><span> BES</span><span class="light"> Lab</span></a></div><div id="bes-nav" class="collapse navbar-collapse"><ul class="nav navbar-nav"><li class="bes nav item"><a href="index.html">实验室概况</a></li><li class="bes nav item"><a href="achievement">科研成果</a></li><li class="bes nav item"><a href="cooperate">合作交流</a></li><li class="bes nav item"><a href="team">人才培养</a></li><li class="bes nav item"><a href="news">新闻动态</a></li><li class="bes nav item"><a href="contact">联系我们</a></li><li class="bes nav item"><a href="dev">开发日志</a></li></ul></div></div></nav><!-- Page Content--><div class="col-md-1"></div><div class="col-md-10"><div class="bes about"><h1 id="yet-another-site">Yet Another Site</h1>
+<h2 id="-">关于</h2>
+<p>BES的主站计划, MEAN + Bootstrap, 也许未来会重写前端?</p>
+<p>网站目前托管于GitHub: <a href="https://github.com/XDUBESLab/yet-another-site">XDUBESLab/yet-another-site</a></p>
+<p>提交Bug/意见/建议请往: <a href="https://github.com/XDUBESLab/yet-another-site/issues">issues</a></p>
+<p>或者致信PM/TM/开发者</p>
+<h2 id="-">日志</h2>
+<h3 id="2015-11-01">2015.11.01</h3>
+<ul>
+<li>为生成静态镜像 调整URL规则</li>
+</ul>
+<h3 id="2015-10-31">2015.10.31</h3>
+<ul>
+<li>重写渲染逻辑</li>
+<li>生成第一个Nightly Build</li>
+<li>强行魔改 紧急上线</li>
+</ul>
+</div></div><!-- Footer--><footer><div class="row"><div class="col-lg-12 bes footer text-center"><hr><p>Copyright &#169; <i class="fa fa-rocket"></i> BESLab 2015</p></div></div></footer><script src="_fw/jquery/jquery.js"></script><script src="http://localhost:3000/_fw/underscore/underscore.js"></script><script src="_fw/angular/angular.min.js"></script><script src="_fw/bootstrap/js/bootstrap.min.js"></script><script src="javascripts/site.js"></script></body></html>
