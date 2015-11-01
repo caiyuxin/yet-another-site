@@ -20,6 +20,8 @@
   ],
   "dependencies": {
     "font-awesome": "fontawesome#~4.4.0",
-    "semantic": "semantic-ui#~2.1.4"
+    "semantic": "semantic-ui#~2.1.4",
+    "bootstrap": "~3.3.5",
+    "angular": "~1.4.7"
   }
 }
