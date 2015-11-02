@@ -1,0 +1,57 @@
+mixin nav-item(literal, url)
+  li
+    a(href= url)= literal
+
+doctype html
+html(lang='zh_cn')
+head
+  meta(charset='utf-8')
+  meta(http-equiv='X-UA-Compatible', content='IE=edge')
+  meta(name='viewport', content='width=device-width, initial-scale=1')
+  meta(name='description', content='')
+  meta(name='author', content='')
+  title 大数据技术与嵌入式系统实验室 - 西安电子科技大学
+  // Bootstrap core CSS
+  link(href='/_fw/bootstrap/css/bootstrap.min.css', rel='stylesheet')
+  link(href='/_fw/font-awesome/css/font-awesome.css', rel='stylesheet')
+  // Custom styles for this template
+  link(href='/stylesheets/cover.css', rel='stylesheet')
+  // Just for debugging purposes. Don't actually copy these 2 lines!
+  //if lt IE 9
+    script(src='../../assets/js/ie8-responsive-file-warning.js')
+  script(src='../../assets/js/ie-emulation-modes-warning.js')
+  // HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
+  //if lt IE 9
+    script(src='https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js')
+    script(src='https://oss.maxcdn.com/respond/1.4.2/respond.min.js')
+body
+  .site-wrapper
+    .site-wrapper-inner
+      .cover-container
+        .masthead.clearfix
+          .inner
+            h3.masthead-brand
+              i.fa.fa-rocket
+              i(style="font-style: oblique;")  BES
+              i Lab
+            nav
+              ul.nav.masthead-nav
+                li.active
+                  a(href="#") 首页
+                +nav-item("实验室概况", "/about")
+                +nav-item("科研成果",   "/achievement")
+                +nav-item("合作交流",   "/cooperate")
+                +nav-item("人才培养",   "/team")
+                +nav-item("联系我们",   "/contact")
+        .inner.cover
+          h1.cover-heading 大数据技术与嵌入式系统实验室
+          p(style="height: 3em")
+          p.lead
+            button.bes.cover.learn-more.btn.btn-lg(href='#') 了解更多
+        .mastfoot
+          .inner
+            p #[a(href="/contact")北校区 主楼Ⅰ区150室/151室 西大楼Ⅲ区511室/517室 南校区 G楼520室/524室]
+            p Copyright @ #[i.fa.fa-rocket] BESLab 2015
+  script(src='/_fw/bootstrap/js/bootstrap.min.js')
+  // IE10 viewport hack for Surface/desktop Windows 8 bug
+  script(src='../../assets/js/ie10-viewport-bug-workaround.js')

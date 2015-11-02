@@ -20,7 +20,7 @@ var nav_items = [["首页",      "/"],
 mongoose.connect('mongodb://localhost/bes');
 
 router.get('/', function(req, res, next) {
-  res.redirect('/about');
+  res.render('cover');
 });
 
 router.get('/about', function(req, res, next) {
