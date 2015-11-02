@@ -16,6 +16,7 @@ head
   link(href='/_fw/font-awesome/css/font-awesome.css', rel='stylesheet')
   // Custom styles for this template
   link(href='/stylesheets/cover.css', rel='stylesheet')
+  link(href='/stylesheets/site.css', rel='stylesheet')
   // Just for debugging purposes. Don't actually copy these 2 lines!
   //if lt IE 9
     script(src='../../assets/js/ie8-responsive-file-warning.js')
@@ -47,11 +48,12 @@ body
           h1.cover-heading 大数据技术与嵌入式系统实验室
           p(style="height: 3em")
           p.lead
-            button.bes.cover.learn-more.btn.btn-lg(href='#') 了解更多
+            button.bes.cover.learn-more.btn.btn-lg(onclick="window.location=\"/about\"") 了解更多
         .mastfoot
           .inner
             p #[a(href="/contact")北校区 主楼Ⅰ区150室/151室 西大楼Ⅲ区511室/517室 南校区 G楼520室/524室]
             p Copyright @ #[i.fa.fa-rocket] BESLab 2015
+  script(src="/_fw/jquery/jquery.js")
   script(src='/_fw/bootstrap/js/bootstrap.min.js')
   // IE10 viewport hack for Surface/desktop Windows 8 bug
   script(src='../../assets/js/ie10-viewport-bug-workaround.js')
