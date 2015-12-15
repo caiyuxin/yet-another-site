@@ -13,3 +13,7 @@ function set_category(category) {
 $(document).ready(function () {
   active_nav();
 });
+
+$(function(){
+  $('.bes.sidebar').affix();
+});

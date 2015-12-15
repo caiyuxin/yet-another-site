@@ -5,6 +5,7 @@ var model = require('../model.js');
 var doc_render = require('../doc.js');
 var Tags = require('../tags.js');
 var _ = require('underscore');
+var team_members = require('../team.js');
 var ObjectID = mongodb.ObjectId;
 
 var router = express.Router();
@@ -47,11 +48,7 @@ router.get('/achievement', function(req, res, next) {
 router.get('/team', function(req, res, next) {
   res.render('team', {
     title: '人才培养',
-    members: [ {
-      name: "陈欢",
-      img:  "images/h.jpg",
-      details: "展讯通信(上海)"
-    }],
+    members: team_members,
     show_search: true,
     categories: _.values(Tags.Person)
   });

@@ -2,21 +2,17 @@ include sidebar
 extends layout
 
 mixin info-block(member)
-  .col-sm-12.col-md-6.col-lg-4
+  .col-sm-12.col-md-6.col-lg-4.bes.team.block
     .thumbnail
-      img(src= member.img, alt= member.name)
+      img(src= member.icon, alt= member.name)
       .caption
         h3= member.name
-        p= member.details
-        a.btn.btn-default(href='#', role='button') 联系我
+        p= member.pos
+        p= member.email
 
 mixin info-blocks(members)
   .row
     each member in members
-      +info-block(member)
-      +info-block(member)
-      +info-block(member)
-      +info-block(member)
       +info-block(member)
 
 block content

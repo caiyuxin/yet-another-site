@@ -14,7 +14,24 @@ block content
           span.glyphicon.glyphicon-time
           span= doc.timestamp.toLocaleDateString('zh-CN')
         hr
-        div!= doc.rendered
+        div#doc
+          != doc.rendered
         hr
       .col-md-4
         +sidebar(categories)
+
+block extra-script
+  script.
+    var doc = $("#doc");
+    doc.find("> h1").hide()
+    var imgs = doc.find("img");
+    _.forEach(imgs, function (img) {
+      $(img).parent().addClass("bes doc img-block");
+      var img_div = $("<p>" + $(img).attr("alt") + "</p>");
+      img_div.insertAfter($(img));
+    });
+    _.forEach(doc.find("> p"), function (p) {
+      if (!$(p).hasClass("bes doc img-block")) {
+        $(p).addClass("bes doc text-block")
+      }
+    });
