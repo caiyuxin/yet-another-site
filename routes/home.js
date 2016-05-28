@@ -10,13 +10,13 @@ var ObjectID = mongodb.ObjectId;
 
 var router = express.Router();
 
-var nav_items = [["首页",      "/"],
-                 ["实验室概况", "/about"],
-                 ["科研成果",   "/achievement"],
-                 ["人才培养",   "/team"],
-                 ["新闻动态",   "/news"],
-                 ["合作交流",   "/cooperate"],
-                 ["联系我们",   "/contact"]];
+var nav_items = [["首页", "/"],
+                 ["概况", "/about"],
+                 ["成果", "/achievement"],
+                 ["团队", "/team"],
+                 ["新闻", "/news"],
+                 ["合作", "/cooperate"],
+                 ["联系", "/contact"]];
 
 mongoose.connect('mongodb://localhost/bes');
 
@@ -80,6 +80,12 @@ router.get('/contact', function(req, res, next) {
   res.render('contact', {
     title: '联系我们'
   });
+});
+
+router.get('/d', function(req, res, next) {
+  res.render('d', {
+    title: '导师介绍'
+  })
 });
 
 function details(ptn, cls) {

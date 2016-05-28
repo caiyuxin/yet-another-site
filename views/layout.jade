@@ -1,6 +1,5 @@
 mixin nav-item(literal, url)
-  li.bes.nav.item
-    a(href= url)= literal
+  a.item(href= url)= literal
 
 doctype html
 html(lang="zh_cn")
@@ -11,50 +10,28 @@ html(lang="zh_cn")
     meta(name="description", content="")
     meta(name="author", content="")
     title= title + " - 大数据技术与嵌入式系统实验室"
-    link(href="/_fw/bootstrap/css/bootstrap.min.css", rel="stylesheet")
+    link(href="/_fw/semantic/semantic.css", rel="stylesheet")
     link(href="/_fw/font-awesome/css/font-awesome.min.css", rel="stylesheet")
     link(href="/_fw/angular/angular-csp.css", rel="stylesheet")
-    link(href="/stylesheets/blog-home.css", rel="stylesheet")
-    link(href="/stylesheets/site.css", rel="stylesheet")
+    link(href="/stylesheets/ng.css" rel="stylesheet")
   body
-    // Navigation
-    nav.navbar.navbar-inverse.navbar-fixed-top(role="navigation")
-      .container
-        .navbar-header
-          button.navbar-toggle(type="button", data-toggle="collapse", data-target="#bes-nav")
-            span.sr-only Toggle navigation
-            span.icon-bar
-            span.icon-bar
-            span.icon-bar
-          a.navbar-brand(href="/")
-            i.fa.fa-rocket
-            span  BES
-            span.light  Lab
-        #bes-nav.collapse.navbar-collapse
-          ul.nav.navbar-nav
-            +nav-item("首页", "/")
-            +nav-item("实验室概况", "/about")
-            +nav-item("科研成果",   "/achievement")
-            +nav-item("合作交流",   "/cooperate")
-            +nav-item("人才培养",   "/team")
-            +nav-item("新闻动态",   "/news")
-            +nav-item("联系我们",   "/contact")
-            +nav-item("开发日志",   "/dev")
-          if show_search
-            form.navbar-form.navbar-right
-              input.form-control(type='text', placeholder='Search')
-              button.btn.btn-default(type='submit') Submit
-    // Page Content
+    .ui.inverted.fixed.menu#header
+        a(href="/").item
+          i.fa.fa-rocket BESLab
+        +nav-item("首页", "/")
+        +nav-item("概况", "/about")
+        +nav-item("成果", "/achievement")
+        +nav-item("新闻", "/news")
+        +nav-item("合作", "/cooperate")
+        +nav-item("团队", "/team")
+        +nav-item("联系", "/contact")
     block content
-    // Footer
-    footer
-      .row
-        .col-lg-12.bes.footer.text-center
-          hr
-          p Copyright &#169; #[i.fa.fa-rocket] BESLab 2015
+    .ui.inverted.vertical.segment
+      a.item(href='/') BESLab
+      a.item(href='/contact') 联系我们
     script(src="/_fw/jquery/jquery.js")
     script(src="/_fw/underscore/underscore.js")
     script(src="/_fw/angular/angular.min.js")
-    script(src="/_fw/bootstrap/js/bootstrap.min.js")
-    script(src="/javascripts/site.js")
+    script(src="/_fw/semantic/semantic.js")
+    script(src="/javascripts/ng.js")
     block extra-script

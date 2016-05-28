@@ -1,26 +1,36 @@
 include sidebar
 extends layout
 
+mixin escaped-email(email)
+  - var pieces = email.split('@')
+  if (pieces.length != 2)
+    a.fa.fa-envelope= " " + email
+  else
+    a.fa.fa-envelope
+      i= " "
+      i= pieces[0]
+      i.fa.fa-at
+      i= pieces[1]
+
 mixin info-block(member)
-  .col-sm-12.col-md-6.col-lg-4.bes.team.block
-    .thumbnail
+  .card
+    .image
       img(src= member.icon, alt= member.name)
-      .caption
-        h3= member.name
-        p= member.pos
-        p= member.email
+    .content
+      .header= member.name
+      .meta
+        a= member.pos
+    .extra.content
+      .left.floated
+        +escaped-email(member.email)
 
 mixin info-blocks(members)
-  .row
-    each member in members
-      +info-block(member)
+  each member in members
+    +info-block(member)
 
 block content
-  .container
-    .row
-      .col-md-8
-        +info-blocks(members)
-      .col-md-4
-        +sidebar(categories)
-
+  .ui.container#content
+    h1.ui.header 人才培养
+    .ui.link.cards
+      +info-blocks(members)
 

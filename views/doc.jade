@@ -1,32 +1,27 @@
 include sidebar.jade
 
-
 extends layout
 
 block content
-  .container
-    .row
-      .col-md-8
-        h1
-          a(href="#")= doc.title
-        p= "by " + doc.author
-        p
-          span.glyphicon.glyphicon-time
-          span= doc.timestamp.toLocaleDateString('zh-CN')
-        hr
-        div#doc
-          != doc.rendered
-        hr
-      .col-md-4
-        +sidebar(categories)
-
+  .ui.text.container#content
+    h1.ui.header
+      a(href="#")= doc.title
+    p= "by " + doc.author
+    p
+      span.glyphicon.glyphicon-time
+      span= doc.timestamp.toLocaleDateString('zh-CN')
+    hr
+    div#doc
+      != doc.rendered
+    hr
+    +sidebar(categories)
 block extra-script
   script.
     var doc = $("#doc");
     doc.find("> h1").hide()
     var imgs = doc.find("img");
     _.forEach(imgs, function (img) {
-      $(img).parent().addClass("bes doc img-block");
+      $(img).parent().addClass("ui centered huge image");
       var img_div = $("<p>" + $(img).attr("alt") + "</p>");
       img_div.insertAfter($(img));
     });

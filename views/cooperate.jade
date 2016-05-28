@@ -3,19 +3,16 @@ include sidebar.jade
 extends layout
 
 mixin logo(name)
-  .col-md-4
-    img.logo(src= "images/logo/" + name)
+  .item
+    .ui.image.large
+      img.logo(src= "images/logo/" + name)
 
 block content
-  .col-md-2.col-sm-12
-  .col-md-8.col-sm-12
-    .bes.about
-      //img.left-top(src= "images/nao.png")
-      h1.text-center 大数据技术与嵌入式系统实验室
-      h1.text-center 合作单位
-      .row.bes.coop
+  .ui.container#content
+    .ui.centered.huge.header 大数据技术与嵌入式系统实验室
+    .ui.centered.huge.header 合作单位
+      .ui.centered.horizontal.list
         +logo("3.jpg")
         +logo("631.jpg")
         +logo("ti.jpg")
         +logo("xilinx.jpg")
-  .col-md-2.col-sm-12

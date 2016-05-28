@@ -3,21 +3,16 @@ include sidebar.jade
 extends layout
 
 block content
-  .col-md-1
-  .col-md-10(ng-app="Contact")
-    .bes.about
-      h1 联系地址
-      ul.list-unstyled
+  .ui.container(ng-app="Contact")#content
+    h1.ui.header 联系地址
     div(ng-controller="ContactController")
-      ul.nav.nav-tabs
-        li(role='presentation')
-          a(href='#', ng-click="set_page('main');", ng-class='{"active" : page == "main"}') 主楼
-        li(role='presentation')
-          a(href='#', ng-click="set_page('west');", ng-class='{"active" : page == "west"}') 西大楼
-        li(role='presentation')
-          a(href='#', ng-click="set_page('south');", ng-class='{"active" : page == "south"}') 南校区
-      blockquote {{ address }}
-      iframe.bes.contact.map(ng-src="{{ url }}", style="width: 100%; height: 400px;")
+      .ui.top.attached.tabular.menu
+        a(href='#', ng-click="set_page('main');", ng-class='{"active" : page == "main"}').item 主楼
+        a(href='#', ng-click="set_page('west');", ng-class='{"active" : page == "west"}').item 西大楼
+        a(href='#', ng-click="set_page('south');", ng-class='{"active" : page == "south"}').item 南校区
+      .ui.bottom.attached.segment
+        blockquote {{ address }}
+        iframe.bes.contact.map(ng-src="{{ url }}", style="width: 100%; height: 400px;")
 
 block extra-script
   script(src="/javascripts/contact.js")

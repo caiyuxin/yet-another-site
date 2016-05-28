@@ -1,0 +1,23 @@
+extends layout
+
+- var di = {
+-
+-
+-
+- }
+
+mixin card()
+  .ui.card
+    .image
+      img(src="/images/Kristy.png")
+    .content
+      a.header 姓名
+      .meta
+       span.date Joined in 2015
+      .description
+        span 介绍但是不要太长
+block content
+  .ui.container#content
+    h1.ui.header 导师介绍
+    .ui.link.cards
+      +card()

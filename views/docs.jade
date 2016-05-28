@@ -1,27 +1,27 @@
 include sidebar.jade
 
 mixin doc-list(docs)
-  each doc in docs
-    h1
-      a(href= base_url + doc.id)= doc.title
-    p= "by " + doc.author
-    p
-      span.glyphicon.glyphicon-time
-      span= doc.timestamp.toLocaleDateString('zh-CN')
-    hr
-    img.img-responsive(src= doc.cover_img, alt= "cover of " + doc.title)
-    hr
-    p!= doc.summary
-    a.btn.btn-primary(href="#")
-      | Read More
-      span.glyphicon.glyphicon-chevron-right
+  .ui.segments
+    each doc in docs
+      .segment
+        .small.image
+          img(src= "/images/about/1-1.jpg", alt= "cover of " + doc.title)
+        .content
+          a.header(href= base_url + doc.id)= doc.title
+          .meta
+            i.fa.fa-user BESLab
+            i.fa.fa-clock-o= doc.timestamp.toLocaleDateString('zh-CN')
+          .description
+            p!= doc.summary
+            a.ui.blue.basic.button(href= doc.url)
+              | Read More
 
 extends layout
 
 block content
-  .container
-    .row
-      .col-md-8
+  div#content
+    .ui.main.container
+      .ui.segment
         +doc-list(docs)
         if docs.length > 10
           ul.pager
@@ -29,5 +29,5 @@ block content
               a(href="#") &#8592; Older
             li.next
               a(href="#") Newer &#8594;
-      .col-md-4
-        +sidebar(categories)
+        .ui.right.rail
+          +sidebar
