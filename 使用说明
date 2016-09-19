@@ -1,0 +1,26 @@
+一、准备工作
+1.安装nodejs
+2.安装mongodb库
+	开启一个终端，输入：
+	cd e:
+	mkdir data
+	cd data
+	mkdir db
+	再开启一个终端：
+	cd e:\mongodb\bin
+	mongod.exe --dbpath E:\data\db(可能有时需要加入--journal --storageEngine=mmapV1)
+3.安装git
+	打开终端：
+	set PATH=%PATH%;E:\software\Git\bin
+
+二、执行代码：
+
+1.cd yet-another-site
+npm i
+npm i -g bower //安装bower包管理工具
+bower i //利用bower安装各种依赖，如jquery等
+node inject_md.js //手动加载新闻和成果信息，后期需要改进
+npm start //启动程序
+
+2.浏览器输入http://localhost:3000/
+
